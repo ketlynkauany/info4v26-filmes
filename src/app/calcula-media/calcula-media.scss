@@ -1,0 +1,35 @@
+.container {
+  width: 400px;
+  margin: 40px auto;
+  padding: 30px;
+  background: #1e1e2f;
+  border-radius: 12px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: Arial;
+}
+
+input {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #4c7eff;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #345edb;
+}
+
+.resultado {
+  margin-top: 20px;
+}
