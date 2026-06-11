@@ -1,12 +1,12 @@
 import { Component, signal } from '@angular/core';
-import { CalculaMedia } from './calcula-media/calcula-media';
+import { AdicionaContato } from './adiciona-contato/adiciona-contato';
 
 @Component({
   selector: 'app-root',
-  imports: [CalculaMedia],
+  imports: [AdicionaContato],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly title = signal('media');
+  protected readonly title = signal('agenda');
 }

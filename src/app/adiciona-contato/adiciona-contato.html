@@ -1,0 +1,62 @@
+<div class="container">
+
+  <h1> Agenda de Contatos</h1>
+
+  <form [formGroup]="formulario" (ngSubmit)="adicionarContato()">
+
+    <label>Nome</label>
+    <input type="text" formControlName="nome" placeholder="Digite o nome">
+
+    <label>Telefone</label>
+    <input type="text" formControlName="telefone" placeholder="(84) 99999-9999">
+
+    <label>E-mail</label>
+    <input type="email" formControlName="email" placeholder="exemplo@email.com">
+
+    <label>Aniversário</label>
+    <input type="date" formControlName="aniversario">
+
+    <label>Tipo de contato</label>
+    <select formControlName="tipo">
+      <option *ngFor="let t of tipos" [value]="t">
+        {{ t }}
+      </option>
+    </select>
+
+    <button type="submit">Adicionar Contato</button>
+
+  </form>
+
+  <h2>Contatos Cadastrados</h2>
+
+  <table *ngIf="contatos.length > 0">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Telefone</th>
+        <th>E-mail</th>
+        <th>Aniversário</th>
+        <th>Tipo</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr *ngFor="let contato of contatos">
+        <td>{{ contato.getNome() }}</td>
+        <td>{{ contato.getTelefone() }}</td>
+        <td>{{ contato.getEmail() }}</td>
+        <td>{{ contato.getAniversario() }}</td>
+        <td>{{ contato.getTipo() }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p *ngIf="contatos.length === 0">
+    Nenhum contato cadastrado.
+  </p>
+
+<p class="erro" *ngIf="mensagemErro">
+  {{ mensagemErro }}
+</p>
+
+</div>
