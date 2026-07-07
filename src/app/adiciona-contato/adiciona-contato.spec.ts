@@ -20,3 +20,4 @@ describe('AdicionaContato', () => {
     expect(component).toBeTruthy();
   });
 });
+
